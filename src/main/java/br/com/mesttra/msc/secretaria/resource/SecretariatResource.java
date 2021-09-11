@@ -68,6 +68,34 @@ public class SecretariatResource {
 
 		return new ResponseEntity<SecretariatResponseDTO>(response, HttpStatus.OK);
 	}
+	
+	/**
+	 * Método REST que coloca um secretariado sob investigação.
+	 * @param id - id do secretariado
+	 * @return ResponseEntity<?> - secretariado criado ou código de erro HTTP
+	 * @author Yallamy Nascimento (yallamy@gmail.com)
+	 * @throws ApplicationException 
+	 * @since 10 de set de 2021
+	 */
+	@RequestMapping(value = "/{id}/investigation", method = RequestMethod.PUT)
+	@ApiOperation(value = ConstantsSwagger.CREATE_SECRETARIAT, 
+	notes = ConstantsSwagger.CREATE_SECRETARIAT_NOTES, response = SecretariatResponseDTO.class)
+	public @ResponseBody ResponseEntity<?> update(
+			@PathVariable("id") Long id,
+			@RequestParam("underInvestigation") Optional<Boolean> underInvestigation) throws ApplicationException {
+
+		Secretariat secretariat = 
+				Secretariat
+				.builder()
+				.id(id)
+				.underInvestigation(underInvestigation.orElse(null))
+				.build();
+
+		Secretariat secretariatResponse = this.service.underInvestigation(secretariat);
+		SecretariatResponseDTO response = Useful.convert(secretariatResponse, SecretariatResponseDTO.class);
+
+		return new ResponseEntity<SecretariatResponseDTO>(response, HttpStatus.OK);
+	}
 
 	/**
 	 * Método REST que recupera um secretariado.

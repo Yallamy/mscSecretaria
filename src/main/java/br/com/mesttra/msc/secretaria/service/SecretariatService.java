@@ -24,7 +24,7 @@ public interface SecretariatService {
 	public Secretariat create(Secretariat secretariat) throws ApplicationException;
 	
 	/**
-	 * Método que coloca o secretariado sobre investigação
+	 * Método que coloca o secretariado sob investigação
 	 * @param secretariat
 	 * @return Secretariat
 	 * @throws ApplicationException

@@ -45,7 +45,7 @@ public class Secretariat {
 	@Column(name = "id", nullable = false)
 	private Long id;
 	
-	@Column(name = "folder", nullable = false)
+	@Column(name = "folder", nullable = false, unique = true)
 	@NotNull(message = Message.FOLDER_REQUIRED)
 	@Enumerated(EnumType.STRING)
 	private DestinationTypeEnum folder;
