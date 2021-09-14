@@ -119,9 +119,10 @@ public class SecretariatResource {
 
 	/**
 	 * Método REST que lista os secretariados de acordo com os filtros informados.
-	 * @param dtBudget - filtro dtBudget do secretariado
-	 * @param source - filtro source do secretariado
-	 * @param destination - filtro destination do secretariado
+	 * @param folder - filtro folder do secretariado
+	 * @param secretary - filtro secretary do secretariado
+	 * @param populationGrade - filtro populationGrade do secretariado
+	 * @param underInvestigation - filtro underInvestigation do secretariado
 	 * @return ResponseEntity<?> - lista de secretariados ou código de erro HTTP
 	 * @author Yallamy Nascimento (yallamy@gmail.com)
 	 * @throws ApplicationException 

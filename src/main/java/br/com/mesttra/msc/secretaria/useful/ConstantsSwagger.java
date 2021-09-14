@@ -37,7 +37,7 @@ public class ConstantsSwagger {
     
     
     //DTOs - RESPONSES
-    public static final String SECRETARIAT_RESPONSE_DTO = "Armazena os dados do request da alocação do secretariado.";
+    public static final String SECRETARIAT_RESPONSE_DTO = "Armazena os dados do response da alocação do secretariado.";
     
     public static final String SECRETARIAT_RESPONSE_ID_DTO = "Armazena o id do secretariado.";
 

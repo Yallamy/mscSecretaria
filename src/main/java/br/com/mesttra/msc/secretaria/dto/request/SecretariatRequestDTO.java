@@ -2,6 +2,8 @@ package br.com.mesttra.msc.secretaria.dto.request;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 import br.com.mesttra.msc.secretaria.useful.ConstantsSwagger;
@@ -33,6 +35,8 @@ public class SecretariatRequestDTO implements Serializable {
 	
 	@ApiModelProperty(value = ConstantsSwagger.SECRETARIAT_REQUEST_SECRETARY_DTO, position = 2)
 	@NotNull(message = Message.SECRETARY_REQUIRED)
+	@Min(1)
+	@Max(30)
 	private String secretary;
 	
 	@ApiModelProperty(value = ConstantsSwagger.SECRETARIAT_REQUEST_POPULATION_GRADE_DTO, position = 3)

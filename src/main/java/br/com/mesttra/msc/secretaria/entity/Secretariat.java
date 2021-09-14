@@ -50,7 +50,7 @@ public class Secretariat {
 	@Enumerated(EnumType.STRING)
 	private DestinationTypeEnum folder;
 	
-	@Column(name = "secretary", nullable = false)
+	@Column(name = "secretary", nullable = false, length = 30)
 	@NotNull(message = Message.SECRETARY_REQUIRED)
 	private String secretary;
 	

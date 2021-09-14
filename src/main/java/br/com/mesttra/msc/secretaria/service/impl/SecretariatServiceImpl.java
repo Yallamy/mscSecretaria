@@ -20,6 +20,11 @@ import br.com.mesttra.msc.secretaria.service.SecretariatService;
 import br.com.mesttra.msc.secretaria.validation.ValidationCustom;
 import lombok.RequiredArgsConstructor;
 
+/**
+ * Classe que implementa os métodos do serviço para manter o secretariado.
+ * @author Yallamy Nascimento (yallamy@gmail.com)
+ * @since 10 de set de 2021
+ */
 @Service
 @Transactional
 @RequiredArgsConstructor

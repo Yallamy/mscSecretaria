@@ -9,7 +9,7 @@ import br.com.mesttra.msc.secretaria.exceptions.ApplicationException;
 /**
  * Interface que define os métodos do serviço para manter um {@link Secretariat}.
  * @author Yallamy Nascimento (yallamy@gmail.com)
- * @since 2 de set de 2021
+ * @since 10 de set de 2021
  */
 public interface SecretariatService {
 
