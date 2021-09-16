@@ -61,7 +61,7 @@ public class SecretariatResource {
 			@Valid @RequestBody SecretariatRequestDTO request) throws ApplicationException {
 
 		Secretariat secretariat = Useful.convert(request, Secretariat.class);
-		secretariat.setFolder(DestinationTypeEnum.getEnum(request.getFolder()));
+		secretariat.setFolder(DestinationTypeEnum.getEnum(request.getFolder().toUpperCase()));
 
 		secretariat = this.service.create(secretariat);
 		SecretariatResponseDTO response = Useful.convert(secretariat, SecretariatResponseDTO.class);

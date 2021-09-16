@@ -6,9 +6,7 @@ import java.util.Objects;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -47,17 +45,9 @@ public class SecretariatServiceImpl implements SecretariatService {
 		}
 		
 		ValidationCustom.validateDataViolation(secretariat, secretariat.getClass());
+		Secretariat secretariatSave = repository.findByFolder(secretariat.getFolder());
 		
-		//verificar se o folder já existe
-		PageRequest pageRequest = PageRequest.of(
-                1,
-                1,
-                Sort.Direction.ASC,
-                "id");
-		
-		Page<Secretariat> lista = list(Secretariat.builder().folder(secretariat.getFolder()).build(), pageRequest);
-		
-		if(!lista.getContent().isEmpty()) {
+		if(Objects.nonNull(secretariatSave)) {
 			throw new ApplicationException(ServiceEnumValidation.SECRETARIAT_FOLDER);
 		}
 		

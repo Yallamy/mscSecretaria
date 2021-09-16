@@ -77,6 +77,8 @@ public class SecretariatServiceImplTest {
 
 		Mockito.when(this.repository.save(
 				Mockito.any(Secretariat.class))).thenReturn(this.response);
+		Mockito.when(this.repository.findByFolder(
+				Mockito.any(DestinationTypeEnum.class))).thenReturn(null);
 		Mockito.when(this.repository.findById(
 				Mockito.any(Long.class))).thenReturn(Optional.of(this.response));
 		Mockito.when(this.repository.findAll(
@@ -99,6 +101,9 @@ public class SecretariatServiceImplTest {
 	
 	@Test
 	public void createDuplicateTest() {
+		
+		Mockito.when(this.repository.findByFolder(
+				Mockito.any(DestinationTypeEnum.class))).thenReturn(this.response);
 		
 		assertThrows(ApplicationException.class, () -> {
 			this.service.create(request);
